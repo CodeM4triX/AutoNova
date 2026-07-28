@@ -120,13 +120,10 @@
                     <div class="cart-summary__total-amount col-6 fw-bold text-end"> {{importe_total_carro}} $</div>
                 </div>
                 {% if request.user.is_authenticated %}
-                    <div class="mt-4 bg-danger text-center rounded">
-                        <form method="post" action="{% url 'procesar_pedido' %}">
-                            {% csrf_token %}
-                            <button type="submit" class="fw-bold text-white border-0 bg-transparent py-2">
-                              EFECTUAR EL PAGO
-                            </button>
-                        </form>
+                    <div class="mt-4 bg-success text-center rounded">
+                        <button id="whatsapp-button" class="fw-bold text-white border-0 bg-transparent py-2" style="background:none;border:none;width:100%;">
+                          CONSULTAR POR WHATSAPP
+                        </button>
                     </div>
                     <div class="mt-4 bg-primary text-center rounded">
                         {% if request.session.ultima_categoria %}
@@ -170,7 +167,36 @@
                 </div>
             {% endif %}
         </div>
-    </div>
-    
+</div>
+
+    <script>
+    (function(){
+        // Número de WhatsApp EN FORMATO INTERNACIONAL SIN + ni espacios (ej: 34123456789)
+        const PHONE = '+59163652296'; // REEMPLAZA con el número deseado
+        const btn = document.getElementById('whatsapp-button');
+        if(!btn) return;
+        btn.addEventListener('click', function(){
+            const rows = document.querySelectorAll('div.row.text-center.mt-3');
+            const lines = [];
+            rows.forEach(function(row){
+                const nameEl = row.querySelector('.col-7 .fw-bold');
+                const qtyEl = row.querySelector('.cantidad .reservado div');
+                const priceEl = row.querySelector('#value_precio') || row.querySelector('#value_costo');
+                const name = nameEl ? nameEl.textContent.trim() : '';
+                const qty = qtyEl ? qtyEl.textContent.trim() : '';
+                const price = priceEl ? priceEl.textContent.trim() : '';
+                if(name) lines.push(name + ' x ' + qty + ' - ' + price);
+            });
+            const totalEl = document.querySelector('.cart-summary__total-amount');
+            const total = totalEl ? totalEl.textContent.trim() : '';
+            let message = 'Consulta de pedido:\n';
+            if(lines.length) message += lines.join('\n') + '\n';
+            if(total) message += 'Total: ' + total;
+            const url = 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(message);
+            window.open(url, '_blank');
+        });
+    })();
+    </script>
+
 </body>
 </html>
