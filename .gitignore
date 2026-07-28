@@ -1,0 +1,34 @@
+# Ignorar entornos virtuales (ajusta según corresponda)
+venv/
+env/
+.env
+
+# Archivos compilados de Python
+__pycache__/
+*.py[cod]
+
+# Archivos de configuración de IDEs y editores
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Base de datos SQLite (si usas SQLite)
+db.sqlite3
+*.sqlite3
+
+# Archivos de logs y migraciones temporales
+logs/
+*.log
+**/migrations/__pycache__/
+
+# Archivos de media y estáticos generados
+media/
+static/
+staticfiles/
+
+# Dependencias generadas por pip
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Archivos de Docker (si usas Docker)
+docker-compose.override.yml

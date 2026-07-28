@@ -1,0 +1,9 @@
+# Fuerza que todos los archivos de texto usen LF
+* text=auto eol=lf
+
+# Archivos específicos que deben mantenerse en LF
+*.sh text eol=lf
+*.py text eol=lf
+*.js text eol=lf
+*.html text eol=lf
+*.css text eol=lf

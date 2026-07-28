@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block head %}
+  {{block.super}}
+  <link rel="stylesheet" href="{% static 'css/tienda.css' %}">
+{% endblock %}
+{% block content %}
+<div class="container-flex row contenedor">
+  <div class="col-2 container-flex sistemas">
+    {% include 'tienda/sistemas.html' %}
+  </div>
+  <div class="col-10 container-flex cont_marcas">
+    <div class="row g-5">
+      {% for marca in marcas %}
+        <div class="col-4">
+          <div class="card">
+            <div class="imgBx">
+              <h2>{{marca.nombre}}<br> <a href="#">Ver modelos</a></h2>
+            </div>
+            <div class="details">
+              <h2>{{marca.nombre}}<br> <a href="#">Ver modelos</a></h2>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

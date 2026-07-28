@@ -1,0 +1,53 @@
+{% if productos.has_other_pages %}
+<nav aria-label="Paginación de productos" class="mt-4 mb-4">
+  <ul class="pagination justify-content-center flex-wrap">
+
+    {% if productos.has_previous %}
+      <li class="page-item">
+        <a class="page-link"
+           href="?{% if pagination_query %}{{ pagination_query }}&{% endif %}page=1">
+          « Primera
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link"
+           href="?{% if pagination_query %}{{ pagination_query }}&{% endif %}page={{ productos.previous_page_number }}">
+          ‹ Anterior
+        </a>
+      </li>
+    {% else %}
+      <li class="page-item disabled"><span class="page-link">« Primera</span></li>
+      <li class="page-item disabled"><span class="page-link">‹ Anterior</span></li>
+    {% endif %}
+
+    <li class="page-item active">
+      <span class="page-link">
+        Página {{ productos.number }} de {{ productos.paginator.num_pages }}
+      </span>
+    </li>
+
+    {% if productos.has_next %}
+      <li class="page-item">
+        <a class="page-link"
+           href="?{% if pagination_query %}{{ pagination_query }}&{% endif %}page={{ productos.next_page_number }}">
+          Siguiente ›
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link"
+           href="?{% if pagination_query %}{{ pagination_query }}&{% endif %}page={{ productos.paginator.num_pages }}">
+          Última »
+        </a>
+      </li>
+    {% else %}
+      <li class="page-item disabled"><span class="page-link">Siguiente ›</span></li>
+      <li class="page-item disabled"><span class="page-link">Última »</span></li>
+    {% endif %}
+
+  </ul>
+  <p class="text-center text-muted small">
+    Mostrando {{ productos.start_index }}–{{ productos.end_index }}
+    de {{ productos.paginator.count }} productos
+  </p>
+</nav>
+{% endif %}

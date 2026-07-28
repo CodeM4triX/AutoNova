@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pedido {{ pedido.id }}</title>
+</head>
+<body>
+    <h2>Pedido confirmado</h2>
+    <p><strong>Usuario:</strong> {{ nombre_usuario }}</p>
+    <p><strong>Email:</strong> {{ email_usuario }}</p>
+    <p><strong>N° pedido:</strong> {{ pedido.id }}</p>
+
+    <h3>Detalle</h3>
+    <ol>
+        {% for linea in lineas_pedido %}
+        <li>
+            {{ linea.cantidad }} x {{ linea.producto.nombre }}
+            — {{ linea.precio }} $ c/u
+            — Subtotal: {{ linea.subtotal }} $
+        </li>
+        {% endfor %}
+    </ol>
+
+    <p><strong>Total:</strong> {{ pedido.total }} $</p>
+</body>
+</html>

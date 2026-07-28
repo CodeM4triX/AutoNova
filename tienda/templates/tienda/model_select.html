@@ -1,0 +1,19 @@
+{% load static %}
+<div class="container">
+    <select class="form-select w-25" aria-label="Default select example" id="id_marca">
+        <option selected>Elige una marca</option>
+        {% for marca in marcas %}
+            <option value="{{ marca.id }}">{{ marca.nombre }}</option>
+        {% endfor %}
+    </select>
+    <select class="form-select w-25" aria-label="Default select example" id="id_modelo">
+        <option selected>Elige un modelo</option>
+    </select>
+    <form class="btn_cont" role="search">
+        <button class="btn" type="submit" id="search_button">Search</button>
+    </form>
+</div> 
+
+<script src="{% static 'js/modelo_select.js' %}"> </script>
+<script src="{% static 'js/search_button.js' %}"> </script>
+

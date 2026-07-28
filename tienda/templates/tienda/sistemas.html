@@ -1,0 +1,26 @@
+
+<div class="nav_sistemas">
+    <span class="">sistema</span>
+    <ul class="ul_sis">
+    {% for sistema in sistemas %}
+        <li class="li_sis">
+        <a class="sis" data-bs-toggle="collapse" href="#collapse{{ sistema.id }}" role="button" aria-expanded="false" aria-controls="collapse{{ sistema.id }}">
+            {{ sistema.nombre }}
+        </a>
+        <div class="collapse categoria" id="collapse{{ sistema.id }}">
+            <ul class="ul_cat">
+            {% for categoria in sistema.categoria_set.all %}
+                <li class="li_cat"> <a href="{% url 'categoria' categoria.id %}" class="">{{ categoria.nombre }}</a></li>
+            {% endfor %}
+            </ul>
+        </div>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+<script type="text/javascript">
+    window.addEventListener('scroll', function(){
+        var nav_sistemas = document.querySelector('.nav_sistemas');
+        nav_sistemas.classList.toggle('sticky', window.scrollY > 0);
+    });
+</script>
