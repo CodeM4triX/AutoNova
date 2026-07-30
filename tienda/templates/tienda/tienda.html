@@ -3,27 +3,57 @@
 {% block head %}
   {{block.super}}
   <link rel="stylesheet" href="{% static 'css/tienda.css' %}">
+  <link rel="stylesheet" href="{% static 'css/contacto.css' %}">
 {% endblock %}
 {% block content %}
 <div class="container-flex row contenedor">
   <div class="col-2 container-flex sistemas">
     {% include 'tienda/sistemas.html' %}
   </div>
-  <div class="col-10 container-flex cont_marcas">
-    <div class="row g-5">
-      {% for marca in marcas %}
-        <div class="col-4">
-          <div class="card">
-            <div class="imgBx">
-              <h2>{{marca.nombre}}<br> <a href="#">Ver modelos</a></h2>
-            </div>
-            <div class="details">
-              <h2>{{marca.nombre}}<br> <a href="#">Ver modelos</a></h2>
+  <div class="col-10 container-flex contenedor">
+    <div class="cont_marcas">
+      <div class="row g-5">
+        {% for marca in marcas %}
+          <div class="col-4">
+            <div class="card">
+              <div class="imgBx">
+                <h2>{{marca.nombre}}<br> <a href="#">Ver modelos</a></h2>
+              </div>
+              <div class="details">
+                <h2>{{marca.nombre}}<br> <a href="#">Ver modelos</a></h2>
+              </div>
             </div>
           </div>
-        </div>
-      {% endfor %}
+        {% endfor %}
+      </div>
     </div>
+    {% include "contacto/contacto.html" %}
+    <section class="footer">
+      <div class="text">
+        <p>Desing & Development By AlphaMarket</p>
+      </div>
+      <div class="redes">
+        <p>Siguenos en nuestras redes</p>
+        <ul> 
+          <li>
+            <a href="https://www.facebook.com/Xuan.Kapaico?locale=es_LA" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.tiktok.com/@__u.a.n__?lang=es-419" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-tiktok"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/channel/UCBK0ev-ZhVY_Z-ZJAJGKLbA" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-youtube"></i>
+            </a>
+          </li>
+      </ul>
+      </div>
+    </section>
   </div>
 </div>
 {% endblock %}
+<!--<form method="post" action="{% url 'enviar_mensaje' %}">-->

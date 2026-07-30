@@ -74,16 +74,12 @@
           </div>
         </div>
         <div class="add_car">
-          {% if request.user.is_authenticated %}
             <form method="post" action="{% url 'carro:agregar_producto' producto.id %}">
               {% csrf_token %}
               <button type="submit" style="background:none;border:none;padding:0;cursor:pointer;color:inherit;text-decoration:underline;">
                 Añadir a la cesta
               </button>
             </form>
-          {% else %}
-            <a href="{% url 'iniciar_session' %}">Añadir a la cesta</a>
-          {% endif %}
         </div>
       </div>
     </div> 

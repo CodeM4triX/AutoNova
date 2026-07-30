@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import re
 from decouple import config, Csv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,6 +28,7 @@ APPS = [
     'account',
     'carro',
     'pedido',
+    'contacto',
 ]
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -62,6 +64,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'carro.context_processors.importe_total_carro',
+                'carro.context_processors.whatsapp_number',
             ],
             'libraries': {
                 'allauth': 'templatetags.allauth',
@@ -131,3 +134,7 @@ AUTHENTICATION_BACKENDS = [
 ]
 # --- Tienda ---
 TIENDA_PRODUCTOS_POR_PAGINA = config('TIENDA_PRODUCTOS_POR_PAGINA', default=10, cast=int)
+# Número de WhatsApp leído desde .env (se limpian los caracteres no numéricos)
+WHATSAPP_NUMBER = config('WHATSAPP_NUMBER', default='')
+WHATSAPP_NUMBER = re.sub(r'\D', '', WHATSAPP_NUMBER or '')
+GMAIL = config('GMAIL')

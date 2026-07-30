@@ -28,6 +28,7 @@ urlpatterns = [
     path('', include('account.urls')),
     path('', include('carro.urls')),
     path('', include('pedido.urls')),
+    path('', include('contacto.urls')),
 
     # fILTER PRODUCTOS SEGUN MARCA Y MODELO
     path('filter_products/', views.filter_products, name='filter_products'),
