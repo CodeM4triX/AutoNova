@@ -80,7 +80,7 @@ class AppSettings(object):
 
     @property
     def EMAIL_MAX_LENGTH(self):
-        return self._setting("EMAIL_MAX_LENGTH", 12)
+        return self._setting("EMAIL_MAX_LENGTH", 45)
 
     @property
     def EMAIL_REQUIRED(self):

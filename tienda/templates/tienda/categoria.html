@@ -3,22 +3,17 @@
 {% load static %}
 {% block head %}
   {{block.super}}
-  <link rel="stylesheet" href="{% static 'css/productos.css' %}">
+  <link rel="stylesheet" href="{% static 'css/categoria.css' %}">
+  <link rel="stylesheet" href="{% static 'css/model_select.css' %}">
+  <link rel="stylesheet" href="{% static 'css/pagination.css' %}">
 {% endblock %}
 
 {% block content %}
-<div class="container-flex row contenedor">
-  <div class="col-2 container-flex sistemas">
-    {% include "tienda/sistemas.html" %}
-  </div>
-  <div class="col-10 container-flex cont_categorias">
-    <div class="box_search">
-      {% include "tienda/model_select.html" %}
-    </div>
+  <div class="col-lg-10 col-md-8 col-sm-12 categoria">
+    {% include "tienda/model_select.html" %}
     {% for producto in productos %}
-    <div class="row">
-      
-      <div class="col-4 box_img">
+    <div class="row mb-4">
+      <div class="col-lg-4 col-md-6 col-sm-12 box_img">
         {% with primera_imagen=producto.imagenes.first %}
             {% if primera_imagen %}
                 <img class="imagen-principal"
@@ -34,22 +29,23 @@
                      class="miniatura">
             {% endfor %}
         </div>
-
       </div>
-      <div class="col-4 box_datos">
+      <div class="col-lg-4 col-md-6 col-sm-12 box_datos">
         <div class="nombre">{{producto.nombre}}</div>
         <div class="marca_producto">{{producto.producto_marca.nombre}}</div>
         <div class="almacen"> <span>Almacen</span> <span>{{producto.almacen|restar:producto.reservado}}</span></div>
-        <ul>
-          {% for detalle in producto.detalles.all %}
-              <li>
-                  <strong>{{ detalle.detalle.nombre }}:</strong>
-                  {{ detalle.valor }}
-              </li>
-          {% endfor %}
-        </ul>
+        <div class="detalles">
+          <ul>
+            {% for detalle in producto.detalles.all %}
+                <li>
+                    <strong>{{ detalle.detalle.nombre }}:</strong>
+                    {{ detalle.valor }}
+                </li>
+            {% endfor %}
+          </ul>
+        </div>
       </div>
-      <div class="col-4 box_add">
+      <div class="col-lg-4 col-md-6 col-sm-12 box_add">
         <div class="precio">{{producto.precio}} $</div>
         <div class="cantidad">
           <div class="cont_cant">
@@ -84,11 +80,11 @@
       </div>
     </div> 
     {% empty %}
-      <p class="text-muted mt-3">No hay productos en esta categoría.</p>
+      <p class="text-muted mt-3">No hay productos en esta marca y modelo.</p>
     {% endfor %}
     {% include 'tienda/pagination.html' with pagination_query='' %}
   </div>
-</div>
+
 
 <div id="modal-imagen" class="modal-imagen">
 
@@ -101,10 +97,7 @@
     <button id="siguiente" class="btn-modal">&#10095;</button>
 
 </div>
+
 <script src="{% static 'js/productos_img.js' %}"></script>
+<script src="{% static 'js/productos.js '%}"></script>
 {% endblock %}
-<!--
-      <div class="col-4 box_img">
-        <img src="{{producto.imagen.url}}" alt="">
-      </div>
-      -->

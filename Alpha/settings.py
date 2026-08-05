@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'Alpha.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'alphamarket',
+        'USER': 'postgres',
+        'PASSWORD': '3690',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -133,8 +137,11 @@ AUTHENTICATION_BACKENDS = [
     'account.auth_backends.AuthenticationBackend',
 ]
 # --- Tienda ---
-TIENDA_PRODUCTOS_POR_PAGINA = config('TIENDA_PRODUCTOS_POR_PAGINA', default=10, cast=int)
+TIENDA_PRODUCTOS_POR_PAGINA = config('TIENDA_PRODUCTOS_POR_PAGINA', default=3, cast=int)
 # Número de WhatsApp leído desde .env (se limpian los caracteres no numéricos)
 WHATSAPP_NUMBER = config('WHATSAPP_NUMBER', default='')
 WHATSAPP_NUMBER = re.sub(r'\D', '', WHATSAPP_NUMBER or '')
 GMAIL = config('GMAIL')
+# SESSION EXPIRE_AT_BROWSER_CLOSE = True
+# -----EMAIL-----
+EMAIL_MAX_LENGTH = 45

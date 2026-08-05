@@ -19,7 +19,7 @@
     {% for key,value in request.session.carro.items %}
         <div class="row row-cols-4 productos"> 
             <div class="col-3">
-                <img src="{{ value.imagen }}" alt="LOGO">
+                <img src="{{ value.imagen }}" alt="{{ value.nombre }}" class="img_producto">
             </div>
             <div class="col-3">{{value.nombre}}</div> 
             <div class="col-3">x{{value.cantidad}}</div> 

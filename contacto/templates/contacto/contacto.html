@@ -1,58 +1,58 @@
 
-<section class="contact" id="contact">
+<section class="contact col-12" id="contact">
     <div class="heading write">
     <h2 class="btnh2"><span class="btnSpan">C</span>ontacto</h2>
     <p>¿Necesitas ayuda o tienes alguna consulta? Escríbenos y estaremos encantados de atenderte. Tu satisfacción es nuestra prioridad.</p>
     </div>
-    <div class="content">
-    <div class="contactInfo">
-        <h3>Contact Info</h3>
-        <div class ="contactInfoBox">
-        <div class="box">
-            <div class="icon">
-            <i class="bi bi-geo-alt"></i>
-            </div>
-            <div class="text">
-            <h4>Dirección</h4>
-            <p>Cochabamba-Bolivia<br>Villa Tunari</p>
-            </div>
-        </div>
-        <div class="box">
-            <div class="icon">
-            <i class="bi bi-envelope"></i>
-            </div>
-            <div class="text">
-            <h4>Email</h4>
-            <p>10tro7loko@gmail.com</p>
-            </div>         
-        </div>
-        <div class="box">
-            <div class="icon">
-            <i class="bi bi-telephone"></i>
-            </div>
-            <div class="text">
-            <h4>Teléfono</h4>
-            <p>+591 777 777 777</p>
-            </div>
-        </div>
-        </div>
-    </div>
-    <div class="formBx">
-        <h3>Envíanos un mensaje</h3>
-        <form method="post" action="{% url 'contacto' %}">
-        {% csrf_token %}
-        <input type="text" name="nombre" placeholder="Nombre" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <textarea name="mensaje" placeholder="Mensaje" required></textarea>
-        <button type="submit">Enviar</button>
-        </form>
-        {% if messages %}
-            {% for message in messages %}
-                <div class="alert {{ message.tags }}">
-                    {{ message }}
+    <div class="content row col-lg-12">
+        <div class="contactInfo col-lg-6 col-12">
+            <h3>Contact Info</h3>
+            <div class ="contactInfoBox">
+                <div class="box">
+                    <div class="icon">
+                    <i class="bi bi-geo-alt"></i>
+                    </div>
+                    <div class="text">
+                    <h4>Dirección</h4>
+                    <p>Cochabamba-Bolivia<br>Villa Tunari</p>
+                    </div>
                 </div>
-            {% endfor %}
-        {% endif %}
-    </div>
+                <div class="box">
+                    <div class="icon">
+                    <i class="bi bi-envelope"></i>
+                    </div>
+                    <div class="text">
+                    <h4>Email</h4>
+                    <p>10tro7loko@gmail.com</p>
+                    </div>         
+                </div>
+                <div class="box">
+                    <div class="icon">
+                    <i class="bi bi-telephone"></i>
+                    </div>
+                    <div class="text">
+                    <h4>Teléfono</h4>
+                    <p>+591 777 777 777</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="formBx col-lg-6 col-12">
+            <h3>Envíanos un mensaje</h3>
+            <form method="post" action="{% url 'contacto' %}">
+            {% csrf_token %}
+            <input type="text" name="nombre" placeholder="Nombre" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+            </form>
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert {{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
     </div>
 </section>
