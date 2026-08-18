@@ -162,11 +162,11 @@ EMAIL_MAX_LENGTH = 45
 # --- SECURITY CONECTION HTTPS ---
 # Forzar a que todas las conexiones sean a través de HTTPS
 #SECURE_SSL_REDIRECT = True
-SECURE_SSL_REDIRECT = not DEBUG
+SECURE_SSL_REDIRECT = True
 
 # Asegurar cookies de sesión sobre HTTPS
-SESSION_COOKIE_SECURE = not DEBUG
-CSRF_COOKIE_SECURE = not DEBUG
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 # Protección contra ataques de clicks (Clickjacking)
 X_FRAME_OPTIONS = 'DENY'
