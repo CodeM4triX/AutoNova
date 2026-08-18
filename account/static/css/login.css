@@ -1,0 +1,77 @@
+.cart_account{
+    background: #f1f1f1;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cart_account_signup{
+    background-color: #fff;
+    width: 360px;
+    padding: 20px;
+}
+.cart_account_signup .cart_account_title{
+    color: #20548E;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.cart_account_signup .form{
+    background: transparent;
+    padding: 5px;
+}
+.cart_account_signup .form div{
+    position: relative;
+    width: auto;
+    background: #fff;
+    margin: 15px 0;
+}
+.cart_account_signup .form div input{
+    background: #fff;
+    width: 100%;
+    padding: 5px 15px;
+    border: 1px solid #20548E;
+    border-radius: 20px;
+}
+.cart_account_signup .form div input:focus{
+    border-color: #20548E;
+    outline: none;
+}
+.cart_account_signup .form div span{
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    color: #555;
+}
+.cart_account_signup .form div ul{
+    background: red;
+    margin-top: 6px;
+    
+    border-radius: 6px;
+}
+.cart_account_signup .form div ul li{
+    color: #fff;
+    font-size: 0.8rem;
+    line-height: 12px;
+    margin-top: 4px;
+    padding: 3px;
+}
+
+.cart_account_signup .form .cart_link{
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.cart_account_signup .form button{
+    background: #20548E;
+    border: none;
+    color: #fff;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px;
+
+}

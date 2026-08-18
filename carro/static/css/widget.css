@@ -1,0 +1,198 @@
+/*=========================================
+    CONTENEDOR GENERAL
+=========================================*/
+
+.cesta{
+
+    margin:25px 0 20px;
+
+    padding-bottom:18px;
+
+    border-bottom:1px solid #e5e7eb;
+}
+
+.cesta a{
+
+    text-decoration:none;
+
+    font-size:1.4rem;
+
+    font-weight:700;
+
+    color:#111827;
+}
+
+/*=========================================
+    BOTÓN CERRAR
+=========================================*/
+
+.close-icon{
+
+    width:34px;
+
+    height:34px;
+
+    padding:6px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    color:#6b7280;
+
+    transition:
+        background .25s,
+        color .25s,
+        transform .25s;
+}
+
+.close-icon:hover{
+
+    background:#f3f4f6;
+
+    color:#111827;
+
+    transform:rotate(90deg);
+}
+
+/*=========================================
+    ENCABEZADOS
+=========================================*/
+
+.campos{
+
+    margin-bottom:15px;
+
+    padding:12px 0;
+
+    font-size:.85rem;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:.6px;
+
+    color:#6b7280;
+
+    border-bottom:1px solid #ececec;
+}
+
+/*=========================================
+    PRODUCTOS
+=========================================*/
+
+.productos{
+
+    align-items:center;
+
+    padding:16px 0;
+
+    border-bottom:1px solid #f3f4f6;
+
+    transition:background .25s;
+}
+
+.productos:hover{
+
+    background:#fafafa;
+}
+
+/*=========================================
+    IMAGEN
+=========================================*/
+
+.productos img{
+
+    width:70px;
+
+    height:70px;
+
+    object-fit:contain;
+
+    border-radius:12px;
+
+    background:#f8fafc;
+
+    padding:6px;
+}
+
+/*=========================================
+    NOMBRE
+=========================================*/
+
+.productos .col-3:nth-child(2){
+
+    font-weight:600;
+
+    color:#1f2937;
+
+    word-break:break-word;
+}
+
+/*=========================================
+    CANTIDAD
+=========================================*/
+
+.productos .col-3:nth-child(3){
+
+    font-weight:600;
+
+    color:#2563eb;
+}
+
+/*=========================================
+    PRECIO
+=========================================*/
+
+.productos .col-3:nth-child(4){
+
+    font-weight:700;
+
+    color:#059669;
+}
+
+/*=========================================
+    CARRITO VACÍO
+=========================================*/
+
+.sin_productos{
+
+    padding:45px 0;
+
+    text-align:center;
+
+    color:#9ca3af;
+
+    font-size:1rem;
+}
+
+/*=========================================
+    RESPONSIVE
+=========================================*/
+
+@media (max-width:768px){
+
+    .campos{
+
+        display:none;
+    }
+
+    .productos{
+
+        padding:18px 0;
+    }
+
+    .productos img{
+
+        width:60px;
+
+        height:60px;
+    }
+
+    .cesta a{
+
+        font-size:1.2rem;
+    }
+
+}

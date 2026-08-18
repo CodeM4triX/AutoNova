@@ -1,0 +1,176 @@
+/*=================================================
+    CONTENEDOR FILTROS
+=================================================*/
+
+.search-bar{
+    background: #ffffff;
+    z-index: 1;
+    display:flex;
+    align-items:center;
+    gap:18px;
+    flex-wrap:wrap;
+    padding:22px;
+    margin:30px 0;
+    border:1px solid #e5e7eb;
+    border-radius:18px;
+    box-shadow:
+        0 4px 10px rgba(0,0,0,.06),
+        0 10px 25px rgba(0,0,0,.09);
+}
+.search-bar.sticky{
+    background: #222;
+    border-bottom: 1px solid #000;
+    box-shadow:
+        0 4px 10px rgba(0,0,0,.03),
+        0 10px 25px rgba(0,0,0,.05);
+}
+/*=================================================
+    SELECTS
+=================================================*/
+
+.search-bar .form-select{
+
+    flex:1;
+
+    min-width:220px;
+
+    width:auto !important;
+
+    height:50px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:12px;
+
+    background:#f9fafb;
+
+    color:#374151;
+
+    font-size:.95rem;
+
+    font-weight:500;
+
+    transition:
+        border-color .25s,
+        box-shadow .25s,
+        background .25s;
+}
+
+.search-bar .form-select:hover{
+
+    background:#ffffff;
+}
+
+.search-bar .form-select:focus{
+
+    border-color:#2563eb;
+
+    background:#ffffff;
+
+    box-shadow:0 0 0 .20rem rgba(37,99,235,.18);
+
+    outline:none;
+}
+
+/*=================================================
+    FORM BOTÓN
+=================================================*/
+
+.btn_cont{
+
+    margin:0;
+}
+
+/*=================================================
+    BOTÓN
+=================================================*/
+
+#search_button{
+
+    height:50px;
+
+    padding:0 28px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+    font-weight:600;
+
+    letter-spacing:.4px;
+
+    transition:
+        transform .25s,
+        background .25s,
+        box-shadow .25s;
+}
+
+#search_button:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 22px rgba(37,99,235,.25);
+}
+
+#search_button:active{
+
+    transform:scale(.98);
+}
+
+/*=================================================
+    RESPONSIVE
+=================================================*/
+
+@media (max-width:992px){
+
+    .search-bar{
+
+        gap:15px;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .search-bar{
+
+        flex-direction:column;
+
+        align-items:stretch;
+    }
+
+    .search-bar .form-select{
+
+        width:100% !important;
+
+        min-width:100%;
+    }
+
+    .btn_cont{
+
+        width:100%;
+    }
+
+    #search_button{
+
+        width:100%;
+    }
+
+}
+
+@media (max-width:576px){
+
+    .search-bar{
+
+        padding:18px;
+
+        border-radius:14px;
+    }
+
+}

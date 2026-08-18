@@ -23,7 +23,6 @@ logs/
 
 # Archivos de media y estáticos generados
 media/
-static/
 staticfiles/
 
 # Dependencias generadas por pip

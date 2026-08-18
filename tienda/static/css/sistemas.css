@@ -1,0 +1,248 @@
+/*=========================================*/
+    PANEL LATERAL
+/*=========================================*/
+
+
+/*=========================================
+    TITULO
+=========================================*/
+.toggle{
+    display: none;
+}
+.sistemas{
+    
+    background:#ffffff;
+    height: 600px;
+    overflow-y: auto;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:1px;
+
+    padding:22px;
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,.03),
+        0 10px 25px rgba(0,0,0,.05);
+
+    position:sticky;
+    top:75px;
+}
+.sistemas span{
+
+    display:block;
+
+    margin-bottom:18px;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:1.5px;
+
+    color:#1f2937;
+
+    border-bottom:1px solid #e5e7eb;
+
+    padding-bottom:12px;
+}
+
+/*=========================================
+    LISTAS
+=========================================*/
+
+.ul_sis,
+.ul_cat{
+
+    list-style:none;
+
+    margin:0;
+
+    padding:0;
+}
+
+.li_sis{
+
+    margin-bottom:10px;
+}
+
+.li_cat{
+
+    margin:6px 0;
+}
+
+/*=========================================
+    SISTEMAS
+=========================================*/
+
+.sis{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    width:100%;
+
+    padding:12px 15px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    color:#374151;
+
+    font-weight:600;
+
+    transition:
+        background .25s,
+        color .25s,
+        padding-left .25s;
+}
+
+.sis:hover{
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    padding-left:20px;
+}
+
+/*=========================================
+    CONTENEDOR categoriasS
+=========================================*/
+
+.categorias{
+
+    margin-top:8px;
+
+    margin-left:8px;
+
+    padding-left:12px;
+
+    border-left:2px solid #e5e7eb;
+}
+
+/*=========================================
+    categoriasS
+=========================================*/
+
+.ul_cat a{
+
+    display:block;
+
+    padding:8px 12px;
+
+    text-decoration:none;
+
+    color:#6b7280;
+
+    border-radius:8px;
+
+    transition:
+        background .25s,
+        color .25s,
+        padding-left .25s;
+}
+
+.ul_cat a:hover{
+
+    background:#f9fafb;
+
+    color:#111827;
+
+    padding-left:18px;
+}
+
+/*=========================================
+    EFECTO ACTIVO
+=========================================*/
+
+.sis[aria-expanded="true"]{
+
+    background:#2563eb;
+
+    color:#ffffff;
+}
+
+/*=========================================
+    RESPONSIVE
+=========================================*/
+
+@media (max-width:992px){
+
+    .sistemas{
+
+        position:relative;
+
+        top:0;
+
+        margin-bottom:30px;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .sistemas{
+        position: fixed;
+        top: 66px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        padding:100px 0;
+        background-color:#fff;
+        border-top: 1px solid #333;
+        transition: 0.5s;
+        z-index: 3;
+        overscroll-behavior: none;
+        padding: 20px 30px;
+    }
+    .sistemas.active{
+        left: 0;
+    }
+    .toggle{
+        position: fixed;
+        top: 20px;
+        left: 40px;
+        display: block;
+        width: 40px;
+        height: 40px;
+        background: url(/static/img/lista.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 30px;
+        cursor: pointer;
+        z-index: 100;
+    }
+    .toggle.active{
+        position: fixed;
+        top: 20px;
+        left: 40px;
+        display: block; 
+        width: 40px;
+        height: 40px;
+        background: url(/static/img/cerrar.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 30px;
+        cursor: pointer;
+    }
+    .sis{
+        padding:11px 14px;
+    }
+
+}
+
+@media (max-width:576px){
+
+    .sistemas{
+
+        border-radius:14px;
+    }
+
+}

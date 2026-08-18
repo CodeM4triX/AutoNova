@@ -1,0 +1,181 @@
+/*==================================
+    CONTENEDOR GENERAL
+==================================*/
+
+
+/*==================================
+    MENÚ LATERAL
+==================================*/
+
+/*==================================
+    CONTENEDOR MARCAS
+==================================*/
+.tienda{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    flex-direction: column;
+    padding: 0px;
+}
+.contenedor_marcas{
+    margin: 0px; 
+    background: transparent;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+/*==================================
+    TARJETA
+==================================*/
+
+.card{
+    border: none;
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,.04),
+        0 12px 30px rgba(0,0,0,.06);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
+    cursor: pointer;
+}
+
+.card:hover{
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,.08),
+        0 20px 40px rgba(0,0,0,.12);
+}
+
+/*==================================
+    IMAGEN
+==================================*/
+
+.imgBx{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    min-height:180px;
+
+    background:linear-gradient(
+        135deg,
+        #f8fafc,
+        #eef2f7
+    );
+
+    padding:25px;
+}
+
+/*==================================
+    NOMBRE MARCA
+==================================*/
+
+.imgBx h2{
+
+    margin:0;
+
+    font-size:1.4rem;
+
+    font-weight:600;
+
+    color:#1f2937;
+
+    text-align:center;
+
+    letter-spacing:.5px;
+}
+
+/*==================================
+    EFECTO SOBRE EL TEXTO
+==================================*/
+
+.card:hover h2{
+
+    color:#2563eb;
+
+    transition:.25s;
+}
+
+/*==================================
+    ESPACIADO ENTRE TARJETAS
+==================================*/
+
+.row{
+
+    row-gap:30px;
+}
+
+/*==================================
+    RESPONSIVE
+==================================*/
+
+@media (max-width:1200px){
+
+    .imgBx{
+        min-height:160px;
+    }
+
+}
+
+@media (max-width:992px){
+
+    .sistemas{
+        margin-bottom:30px;
+        padding-right:0;
+    }
+
+    .imgBx{
+
+        min-height:150px;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .tienda{
+
+        margin:20px 0;
+    }
+
+    .contenedor_marcas{
+
+        padding:0;
+    }
+
+    .imgBx{
+
+        min-height:130px;
+    }
+
+    .imgBx h2{
+
+        font-size:1.2rem;
+    }
+
+}
+
+@media (max-width:576px){
+
+    .card{
+
+        border-radius:14px;
+    }
+
+    .imgBx{
+
+        min-height:110px;
+    }
+
+}

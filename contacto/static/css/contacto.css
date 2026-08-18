@@ -1,0 +1,142 @@
+/*------------------------------------> contacto*/
+section{
+    margin-top: 20px;    
+    padding: 50px 40px;
+}
+.contact{
+    text-align: center;
+    background: #111;
+    color: #fff;
+}
+.heading{
+    text-align: center;
+    margin: 40px 0px;
+}
+.heading .btnh2{
+    margin: 20px 0px;
+    font-size: 1.5em;
+    font-family: Cambria;
+    font-weight: 500;
+}
+.heading .btnh2 .btnSpan{
+    color: #2196f3;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+.content{
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 10px 0px;
+    padding: 0 50px;
+}
+.contactInfo{
+    background: transparent;
+    display: flex;
+    justify-content: start;
+    align-items: center;    
+    flex-direction: column;
+    padding: 20px;
+}
+.contactInfoBox{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.contactInfoBox .box{
+    margin: 5px;
+    display: flex;
+}
+.contactInfoBox .box .icon{
+    min-width: 40px;
+    padding-top: 4px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+    font-size: 24px;
+}
+.contactInfoBox .box .text{
+    width: 200px;
+    margin-left: 20px;
+    font-size: 15px;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+}
+.contactInfoBox .box .text h4{
+    font-size: 15px;
+    color: #2196f3;
+    display: flex;
+}
+.contactInfoBox .box .text p{
+    display: flex;
+    font-size: 15px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.formBx{
+    background: transparent;
+    display: flex;
+    justify-content: start;
+    align-items: center;    
+    flex-direction: column;
+    padding: 20px;
+}
+.formBx form{
+    background: #111;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.formBx h3,
+.contactInfo h3{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: start;
+}
+.formBx form input,
+.formBx form textarea{
+    margin-bottom: 20px;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background: #222;
+    color: #fff;
+    resize: none;
+}
+.formBx form textarea{
+    min-height: 100px;
+}
+.formBx form input::placeholder,
+.formBx form textarea::placeholder{
+    color: #777;
+}
+.formBx form input:focus::placeholder,
+.formBx form textarea:focus::placeholder {
+    color: transparent;
+}
+/*---> sobreescribe los estilos que aplica chrome */
+.formBx form input:-webkit-autofill,
+.formBx form input:-webkit-autofill:hover,
+.formBx form input:-webkit-autofill:focus,
+.formBx form textarea:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #222 inset;
+    -webkit-text-fill-color: #fff;
+    transition: background-color 5000s ease-in-out 0s;
+}
+.formBx form button{
+    width: 100%;
+    background: #2196f3;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+

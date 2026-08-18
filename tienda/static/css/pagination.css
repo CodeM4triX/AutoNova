@@ -1,0 +1,160 @@
+/*==================================================
+    PAGINACIÓN
+==================================================*/
+
+.pagination{
+
+    gap:10px;
+
+    margin:0;
+
+}
+
+/*==================================================
+    BOTONES
+==================================================*/
+
+.pagination .page-link{
+
+    min-width:48px;
+
+    height:48px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:0 18px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#ffffff;
+
+    color:#374151;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    box-shadow:
+        0 2px 8px rgba(0,0,0,.05);
+
+    transition:
+        background .25s,
+        color .25s,
+        transform .25s,
+        box-shadow .25s;
+}
+
+/*==================================================
+    HOVER
+==================================================*/
+
+.pagination .page-link:hover{
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 10px 20px rgba(37,99,235,.25);
+
+}
+
+/*==================================================
+    PÁGINA ACTUAL
+==================================================*/
+
+.pagination .active .page-link{
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+    box-shadow:
+        0 10px 25px rgba(37,99,235,.30);
+    z-index: 0;
+
+}
+
+/*==================================================
+    DESHABILITADO
+==================================================*/
+
+.pagination .disabled .page-link{
+
+    background:#f3f4f6;
+
+    color:#9ca3af;
+
+    cursor:not-allowed;
+
+    box-shadow:none;
+
+}
+
+/*==================================================
+    TEXTO INFERIOR
+==================================================*/
+
+.text-muted{
+
+    margin-top:18px;
+
+    color:#6b7280 !important;
+
+    font-size:.95rem;
+
+    letter-spacing:.3px;
+
+}
+
+/*==================================================
+    RESPONSIVE
+==================================================*/
+
+@media (max-width:768px){
+
+    .pagination{
+
+        gap:8px;
+
+    }
+
+    .pagination .page-link{
+
+        min-width:42px;
+
+        height:42px;
+
+        padding:0 14px;
+
+        font-size:.9rem;
+
+    }
+
+}
+
+@media (max-width:576px){
+
+    .pagination{
+
+        justify-content:center;
+
+    }
+
+    .pagination .page-link{
+
+        width:100%;
+
+        min-width:auto;
+
+    }
+
+}

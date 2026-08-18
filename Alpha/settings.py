@@ -21,6 +21,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='127.0.0.1,localhost', cast=Csv())
+CSRF_TRUSTED_ORIGINS = config(
+    'CSRF_TRUSTED_ORIGINS',
+    default='',
+    cast=Csv()
+)
 
 # --- Apps ---
 APPS = [
@@ -29,6 +34,7 @@ APPS = [
     'carro',
     'pedido',
     'contacto',
+    'propietario',
 ]
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -65,6 +71,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'carro.context_processors.importe_total_carro',
                 'carro.context_processors.whatsapp_number',
+                'propietario.context_processors.info_propietario_global',
             ],
             'libraries': {
                 'allauth': 'templatetags.allauth',
@@ -77,12 +84,12 @@ WSGI_APPLICATION = 'Alpha.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'alphamarket',
-        'USER': 'postgres',
-        'PASSWORD': '3690',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': config('ENGINE', default='django.db.backends.postgresql'),
+        'NAME': config('NAME'),
+        'USER': config('USER'),
+        'PASSWORD': config('PASSWORD'),
+        'HOST': config('HOST'),
+        'PORT': config('PORT'),
     }
 }
 
@@ -98,8 +105,12 @@ TIME_ZONE = 'America/New_York'
 USE_I18N = True
 USE_TZ = True
 
+# --- ARCHIVOS STATICS ---
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
@@ -136,6 +147,7 @@ ACCOUNT_PREVENT_ENUMERATION = True
 AUTHENTICATION_BACKENDS = [
     'account.auth_backends.AuthenticationBackend',
 ]
+
 # --- Tienda ---
 TIENDA_PRODUCTOS_POR_PAGINA = config('TIENDA_PRODUCTOS_POR_PAGINA', default=3, cast=int)
 # Número de WhatsApp leído desde .env (se limpian los caracteres no numéricos)
@@ -145,3 +157,29 @@ GMAIL = config('GMAIL')
 # SESSION EXPIRE_AT_BROWSER_CLOSE = True
 # -----EMAIL-----
 EMAIL_MAX_LENGTH = 45
+
+
+# --- SECURITY CONECTION HTTPS ---
+# Forzar a que todas las conexiones sean a través de HTTPS
+#SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = not DEBUG
+
+# Asegurar cookies de sesión sobre HTTPS
+SESSION_COOKIE_SECURE = not DEBUG
+CSRF_COOKIE_SECURE = not DEBUG
+
+# Protección contra ataques de clicks (Clickjacking)
+X_FRAME_OPTIONS = 'DENY'
+
+"""
+# Activa HSTS por un año (31,536,000 segundos)
+SECURE_HSTS_SECONDS = 31536000
+
+# Opcional: Aplica HSTS también a todos los subdominios (ej. ://alphamarket.com)
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+# Opcional: Permite que tu sitio entre en la lista de precarga HSTS de los navegadores
+SECURE_HSTS_PRELOAD = True
+
+# Nota muy importante: Solo activa estas líneas de HSTS si ya compraste o configuraste un certificado SSL (HTTPS) real en tu servidor de producción. Si lo activas sin tener HTTPS funcional, tu navegador bloqueará el acceso al sitio por completo.
+"""

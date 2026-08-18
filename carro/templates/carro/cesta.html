@@ -129,7 +129,7 @@
                     <div class="mt-4 bg-success text-center rounded">
                         <form method="post" action="{% url 'carro:limpiar_carro' %}">
                             {% csrf_token %}
-                            <button id="whatsapp-button" data-whatsapp-number="{{ WHATSAPP_NUMBER }}" class="fw-bold text-white border-0 bg-transparent py-2" style="background:none;border:none;width:100%;">
+                            <button id="whatsapp-button" data-whatsapp-number="{{ global_propietario.telefono }}" class="fw-bold text-white border-0 bg-transparent py-2" style="background:none;border:none;width:100%;">
                               CONSULTAR POR WHATSAPP
                             </button>
                         </form>

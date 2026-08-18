@@ -1,0 +1,387 @@
+/*==================================================
+CATÁLOGO
+==================================================*/
+
+.categoria{
+    background: #efecec;
+    padding:10px 30px;
+
+}
+
+/*==================================================
+BUSCADOR
+==================================================*/
+
+/*==================================================
+PRODUCTO
+==================================================*/
+
+.categoria.row{
+    border:1px solid #ececec;
+    border-radius:18px;
+    padding:24px;
+    margin-bottom:30px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    box-shadow:
+        0 4px 10px rgba(0,0,0,.06),
+        0 10px 25px rgba(0,0,0,.09);
+    transition:
+        transform .25s,
+        box-shadow .25s;
+}
+
+.categoria.row:hover{
+    transform:translateY(-4px);
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.08);
+}
+
+/*=====================================*/
+.box_img {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: #ffffff;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+  
+}
+.imagen-principal {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  background: #f6f8fb;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.imagen-principal:hover {
+  transform: scale(1.02);
+}
+
+.miniaturas {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  overflow-x: auto;
+  padding: 0.2rem 0.1rem 0.45rem;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+.miniaturas::-webkit-scrollbar {
+  height: 5px;
+}
+
+.miniaturas::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: #cbd5e1;
+}
+
+.miniatura {
+  flex: 0 0 68px;
+  width: 68px;
+  height: 68px;
+  padding: 0.25rem;
+  border: 1px solid #e5eaf0;
+  border-radius: 10px;
+  background: #ffffff;
+  cursor: pointer;
+  object-fit: contain;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.miniatura:hover {
+  border-color: #2563eb;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.16);
+  transform: translateY(-2px);
+}
+
+.miniatura:focus {
+  outline: 3px solid rgba(37, 99, 235, 0.22);
+  outline-offset: 2px;
+}
+/*==================================================
+MODAL
+==================================================*/
+
+.modal-imagen{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(15,23,42,.92);
+
+    z-index:9999;
+
+}
+
+.imagen-ampliada{
+
+    max-width:85vw;
+
+    max-height:85vh;
+
+    border-radius:14px;
+
+}
+
+.btn-modal{
+
+    background:rgba(255,255,255,.15);
+
+    border:none;
+
+    color:white;
+
+    font-size:2rem;
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.btn-modal:hover{
+
+    background:#2563eb;
+
+}
+
+.cerrar-modal{
+
+    position:absolute;
+
+    top:25px;
+
+    right:35px;
+
+    font-size:3rem;
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+
+@media (max-width: 576px) {
+  .box_img {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .miniatura {
+    flex-basis: 58px;
+    width: 58px;
+    height: 58px;
+  }
+}
+.box_datos {
+  padding: 1.5rem;
+  background: #ffffff;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.nombre {
+  margin-bottom: 0.35rem;
+  color: #172033;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.marca_producto {
+  margin-bottom: 1.25rem;
+  color: #748092;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.almacen {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  background: #f5f8fb;
+  color: #516073;
+  font-size: 0.9rem;
+}
+
+.almacen span:first-child {
+  font-weight: 600;
+}
+
+.almacen span:last-child {
+  min-width: 2rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  background: #dff7eb;
+  color: #16804b;
+  font-weight: 700;
+  text-align: center;
+}
+
+.detalles {
+  padding-top: 1rem;
+  border-top: 1px solid #eef1f5;
+}
+
+.detalles ul {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.detalles li {
+  color: #667085;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.detalles strong {
+  margin-right: 0.2rem;
+  color: #344054;
+  font-weight: 600;
+}
+
+@media (max-width: 576px) {
+  .box_datos {
+    padding: 1.2rem;
+    border-radius: 12px;
+  }
+
+  .nombre {
+    font-size: 1.08rem;
+  }
+
+  .almacen {
+    margin-bottom: 1rem;
+  }
+}
+.box_add {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.25rem;
+  min-height: 100%;
+  padding: 1.5rem;
+  background: #ffffff;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+}
+
+.precio {
+  color: #172033;
+  font-size: clamp(1.7rem, 3vw, 2.25rem);
+  font-weight: 750;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.cantidad {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #667085;
+  font-size: 0.9rem;
+}
+.cont_cant,
+.reservado {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.2rem;
+  height: 2.2rem;
+  padding: 0 0.7rem;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.add_car form {
+  width: 100%;
+}
+
+.btn-agregar {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid #2563eb;
+  border-radius: 10px;
+  background: #2563eb;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 650;
+  line-height: 1.2;
+  text-align: center;
+  transition: background 0.2s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.btn-agregar:hover {
+  border-color: #1d4ed8;
+  background: #1d4ed8;
+  box-shadow: 0 7px 16px rgba(37, 99, 235, 0.24);
+  transform: translateY(-2px);
+}
+
+.btn-agregar:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btn-agregar:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.3);
+  outline-offset: 3px;
+}
+
+@media (max-width: 576px) {
+  .box_add {
+    gap: 1rem;
+    padding: 1.2rem;
+    border-radius: 12px;
+  }
+
+  .btn-agregar {
+    min-height: 48px;
+  }
+}
+/*==================================================
+SIN PRODUCTOS
+==================================================*/
+
+.text-muted{
+
+    text-align:center;
+
+    font-size:1.1rem;
+
+    padding:50px 0;
+
+}
+
